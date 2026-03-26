@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Career Readiness Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Student Career Readiness &amp; Skill Gap Analyzer</h1>
+        <p class="subtitle">Enter your details to check readiness and get a personalized roadmap.</p>
+    </header>
+
+    <form action="{{ url_for('analyze') }}" method="post" class="card form-grid">
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="academic_year">Academic Year (1–4)</label>
+            <input type="number" id="academic_year" name="academic_year" min="1" max="4" required>
+        </div>
+
+        <div class="form-group">
+            <label for="cgpa">CGPA (out of 10)</label>
+            <input type="number" id="cgpa" name="cgpa" step="0.01" min="0" max="10" required>
+        </div>
+
+        <div class="form-group">
+            <label for="programming_languages">Programming Languages (comma separated)</label>
+            <input type="text" id="programming_languages" name="programming_languages"
+                   placeholder="e.g., C, C++, Java, Python">
+        </div>
+
+        <div class="form-group">
+            <label for="technologies">Technologies (comma separated)</label>
+            <input type="text" id="technologies" name="technologies"
+                   placeholder="e.g., HTML, CSS, JavaScript, React, SQL, Django">
+        </div>
+
+        <div class="form-group">
+            <label for="technical_skill_rating">Technical Skill Rating (1–10)</label>
+            <input type="number" id="technical_skill_rating" name="technical_skill_rating" min="1" max="10" required>
+        </div>
+
+        <div class="form-group">
+            <label for="soft_skill_rating">Soft Skill Rating (1–10)</label>
+            <input type="number" id="soft_skill_rating" name="soft_skill_rating" min="1" max="10" required>
+        </div>
+
+        <div class="form-group">
+            <label for="num_projects">Number of Projects</label>
+            <input type="number" id="num_projects" name="num_projects" min="0" required>
+        </div>
+
+        <div class="form-group">
+            <label for="internship_experience">Number of Internships</label>
+            <input type="number" id="internship_experience" name="internship_experience" min="0" required>
+        </div>
+
+        <div class="form-group">
+            <label for="weekly_upskilling_hours">Weekly Upskilling Hours</label>
+            <input type="number" id="weekly_upskilling_hours" name="weekly_upskilling_hours" min="0" required>
+        </div>
+
+        <div class="form-group">
+            <label for="career_interest">Career Interest / Role</label>
+            <input type="text" id="career_interest" name="career_interest"
+                   placeholder="e.g., Software Engineer, Frontend Developer, Data Scientist" required>
+        </div>
+
+        <div class="form-group">
+            <label for="target_company">Target Company</label>
+            <input type="text" id="target_company" name="target_company"
+                   placeholder="e.g., Google, Microsoft, Amazon" required>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-primary">Analyze Career Readiness</button>
+        </div>
+    </form>
+
+    <footer>
+        <p>Powered by Machine Learning &amp; AI Interview Coach</p>
+    </footer>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+

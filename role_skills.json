@@ -1,0 +1,4 @@
+{
+    "software engineer": ["python", "java", "javascript", "sql"],
+    "data scientist": ["python", "sql", "pandas", "numpy"]
+}

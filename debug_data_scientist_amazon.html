@@ -1,0 +1,104 @@
+<h2>📋 Mock Interview for data scientist at amazon</h2>
+<p><em>Technologies: python,java | Languages: python</em></p>
+<h3>🔧 1. Technical / Conceptual Questions</h3>
+<div style="margin-bottom: 1rem;">
+  <strong>Q1: Describe how you would handle missing data in a dataset.</strong><br>
+  <em>Sample Answer:</em> Options: remove rows/columns (if few), impute with mean/median/mode, use KNN imputation, predictive imputation, or create a missing indicator feature. Choice depends on missingness pattern (MCAR, MAR, MNAR).
+</div>
+<div style="margin-bottom: 1rem;">
+  <strong>Q2: What is feature engineering and why is it important?</strong><br>
+  <em>Sample Answer:</em> Feature engineering creates new features from raw data to improve model performance. Examples: log transforms, interaction terms, binning, encoding categoricals, date decomposition. Often more impactful than model selection.
+</div>
+<div style="margin-bottom: 1rem;">
+  <strong>Q3: How would you approach an A/B testing experiment?</strong><br>
+  <em>Sample Answer:</em> Define hypothesis, choose metric, calculate sample size, randomly split users, run experiment for sufficient duration, check statistical significance (p-value < 0.05), and consider practical significance.
+</div>
+<div style="margin-bottom: 1rem;">
+  <strong>Q4: Explain the Central Limit Theorem and its practical applications.</strong><br>
+  <em>Sample Answer:</em> CLT states that sample means approach a normal distribution as sample size increases, regardless of population distribution. This enables hypothesis testing, confidence intervals, and A/B testing.
+</div>
+<div style="margin-bottom: 1rem;">
+  <strong>Q5: What are the assumptions of linear regression?</strong><br>
+  <em>Sample Answer:</em> Linearity, independence of errors, homoscedasticity (constant variance), normal distribution of residuals, no multicollinearity. Violations require transformations or different models.
+</div>
+<hr>
+<h3>💻 2. Coding Questions</h3>
+<div style="margin-bottom: 1rem;">
+  <strong>Q1: Implement a decorator that caches function results (memoization).</strong><br>
+  <em>Solution Approach:</em> Use a dictionary to store results. The decorator wraps the function, checks if args are cached, returns cached result or computes and stores it. Python's @functools.lru_cache does this built-in.
+</div>
+<div style="margin-bottom: 1rem;">
+  <strong>Q2: Write a generator function that yields Fibonacci numbers.</strong><br>
+  <em>Solution Approach:</em> Use two variables a, b = 0, 1. In a loop: yield a, then update a, b = b, a+b. Generators are memory efficient — they produce values on-demand instead of storing all in memory.
+</div>
+<div style="margin-bottom: 1rem;">
+  <strong>Q3: Implement a function to find all permutations of a string.</strong><br>
+  <em>Solution Approach:</em> Use recursion: base case (single char returns itself). For each character, fix it and recursively permute the rest. Time: O(n!). Can also use itertools.permutations().
+</div>
+<hr>
+<h3>🤝 3. HR / Behavioral Questions</h3>
+<div style="margin-bottom: 1rem;">
+  <strong>Q1: Describe a time when you had to learn a new technology quickly.</strong><br>
+  <em>Sample Answer:</em> When my team adopted a new framework, I dedicated evenings to documentation and tutorials, built a small prototype, and shared my learnings with the team within a week. I believe in learning by doing and documenting as I go.
+</div>
+<div style="margin-bottom: 1rem;">
+  <strong>Q2: How do you handle tight deadlines and pressure?</strong><br>
+  <em>Sample Answer:</em> I prioritize tasks by impact, break work into manageable chunks, communicate proactively with stakeholders about progress, and focus on delivering the MVP first. I also maintain a healthy work routine to stay productive.
+</div>
+<div style="margin-bottom: 1rem;">
+  <strong>Q3: What is your biggest weakness and how are you working on it?</strong><br>
+  <em>Sample Answer:</em> I sometimes spend too much time optimizing code before shipping. I'm learning to balance perfectionism with pragmatism by setting time-boxes for optimization and focusing on delivering working features first, then iterating.
+</div>
+<div style="margin-bottom: 1rem;">
+  <strong>Q4: How do you stay updated with the latest trends in data scientist?</strong><br>
+  <em>Sample Answer:</em> I follow industry blogs, subscribe to newsletters (like TLDR, Morning Brew Tech), attend webinars, participate in open-source projects, and regularly practice on coding platforms. I also follow key people in the data scientist space on Twitter/LinkedIn.
+</div>
+<hr>
+<h3>📈 4. Feedback & Improvement Tips</h3>
+<ol>
+  <li>Use the STAR method (Situation, Task, Action, Result) for all behavioral questions.</li>
+  <li>Research amazon's recent products, blog posts, and engineering culture before the interview.</li>
+  <li>Build a portfolio project using python,java and deploy it — this impresses interviewers at amazon.</li>
+  <li>Practice at least 2-3 data scientist-specific coding problems daily on LeetCode or HackerRank.</li>
+  <li>Practice explaining data scientist concepts to a non-technical person — this demonstrates deep understanding.</li>
+</ol>
+<hr>
+<h3>📚 5. Interview Preparation Materials & Resources</h3>
+
+    <h3>💻 Coding Practice Platforms</h3>
+    <ul>
+        <li><a href="https://leetcode.com/problemset/" target="_blank">LeetCode</a> — Best for DSA interview prep (start with Top 150 Interview Questions)</li>
+        <li><a href="https://www.hackerrank.com/domains" target="_blank">HackerRank</a> — Skill-based challenges with certifications</li>
+        <li><a href="https://www.codingninjas.com/studio" target="_blank">Coding Ninjas Studio</a> — Guided problem sets by topic</li>
+        <li><a href="https://www.geeksforgeeks.org/practice/" target="_blank">GeeksforGeeks Practice</a> — Company-wise and topic-wise problems</li>
+        <li><a href="https://www.interviewbit.com/practice/" target="_blank">InterviewBit</a> — Structured coding interview preparation</li>
+    </ul>
+    <h3>📊 Data Science Resources</h3>
+    <ul>
+        <li><a href="https://www.coursera.org/professional-certificates/google-data-analytics" target="_blank">Google Data Analytics Certificate (Coursera)</a></li>
+        <li><a href="https://www.youtube.com/c/3blue1brown" target="_blank">3Blue1Brown (YouTube)</a> — Beautiful math and statistics visualizations</li>
+        <li><a href="https://www.kaggle.com/competitions" target="_blank">Kaggle Competitions</a> — Real-world data science challenges</li>
+        <li><a href="https://mode.com/sql-tutorial/" target="_blank">Mode SQL Tutorial</a> — Interactive SQL for analytics</li>
+        <li><a href="https://www.stratascratch.com/" target="_blank">StrataScratch</a> — Real data science interview questions from top companies</li>
+    </ul>
+    <h3>📚 Language-Specific Resources</h3>
+    <ul>
+        <li><a href="https://docs.python.org/3/tutorial/" target="_blank">Python Official Tutorial</a> — Complete Python reference</li>
+        <li><a href="https://realpython.com/" target="_blank">Real Python</a> — In-depth Python tutorials and guides</li>
+    </ul>
+    <h3>🎤 Interview Preparation</h3>
+    <ul>
+        <li><a href="https://www.pramp.com/" target="_blank">Pramp</a> — Free peer-to-peer mock interviews</li>
+        <li><a href="https://www.youtube.com/c/NeetCode" target="_blank">NeetCode (YouTube)</a> — LeetCode solutions explained clearly</li>
+        <li><a href="https://www.techinterviewhandbook.org/" target="_blank">Tech Interview Handbook</a> — Complete guide: resume, coding, system design, behavioral</li>
+        <li><a href="https://github.com/yangshun/tech-interview-handbook" target="_blank">Tech Interview Handbook (GitHub)</a> — Curated interview tips & resources</li>
+        <li><a href="https://www.youtube.com/c/takeUforward" target="_blank">take U forward (YouTube)</a> — DSA complete course and interview prep</li>
+        <li><a href="https://interviewing.io/" target="_blank">interviewing.io</a> — Anonymous mock interviews with engineers</li>
+    </ul>
+
+    <h3>🏗️ System Design</h3>
+    <ul>
+        <li><a href="https://github.com/donnemartin/system-design-primer" target="_blank">System Design Primer (GitHub)</a> — The most popular system design resource</li>
+        <li><a href="https://www.youtube.com/c/GauravSensei" target="_blank">Gaurav Sen (YouTube)</a> — System design concepts explained simply</li>
+        <li><a href="https://bytebytego.com/" target="_blank">ByteByteGo</a> — Visual system design guides by Alex Xu</li>
+    </ul>

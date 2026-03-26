@@ -1,0 +1,4 @@
+{
+    "google": ["python", "java", "c++", "go", "javascript"],
+    "microsoft": ["c#", "python", "java", "typescript", "azure"]
+}

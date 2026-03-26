@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Mock Interview</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .interview-content h2 {
+            color: #38bdf8;
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+        .interview-content h3 {
+            color: #4ade80;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.15rem;
+        }
+        .interview-content strong {
+            color: #f1f5f9;
+        }
+        .interview-content em {
+            color: #94a3b8;
+        }
+        .interview-content hr {
+            border: none;
+            border-top: 1px solid rgba(148, 163, 184, 0.2);
+            margin: 1.5rem 0;
+        }
+        .interview-content a {
+            color: #38bdf8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .interview-content a:hover {
+            color: #7dd3fc;
+            text-decoration: underline;
+        }
+        .interview-content ul, .interview-content ol {
+            padding-left: 1.5rem;
+        }
+        .interview-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        .interview-content div {
+            padding: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>AI Mock Interview</h1>
+        <p class="subtitle">
+            Role: {{ career_interest }} &nbsp;|&nbsp; Company: {{ target_company }}
+        </p>
+        {% if matched_company or matched_role %}
+            <p class="subtitle" style="font-size:0.9rem; color:#94a3b8;">
+                {% if matched_role %}(interpreted role: {{ matched_role }}){% endif %}
+                {% if matched_company %}&nbsp;|&nbsp; (interpreted company: {{ matched_company }}){% endif %}
+            </p>
+        {% endif %}
+    </header>
+
+    <section class="card interview-content">
+        {% if interview %}
+            <article>
+                {{ interview | safe }}
+            </article>
+        {% else %}
+            <p>No interview content generated. Please go back and try again.</p>
+        {% endif %}
+    </section>
+
+    <div class="nav-links">
+        <a href="{{ url_for('index') }}" class="link">← Back to Input Form</a>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

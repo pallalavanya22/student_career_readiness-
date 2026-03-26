@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Career Readiness Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Career Readiness Result</h1>
+        <p class="subtitle">Hi {{ student.name or "Student" }}, here is your analysis.</p>
+    </header>
+
+    <section class="grid-2">
+        <div class="card">
+            <h2>Readiness Status</h2>
+            <p class="status {{ 'ready' if readiness_status == 'Career Ready' else 'not-ready' }}">
+                {{ readiness_status }}
+            </p>
+            <p><strong>Readiness Score:</strong> {{ readiness_score }}%</p>
+        </div>
+
+        <div class="card">
+            <h2>Skill Match</h2>
+            {% if not matched_company or not matched_role %}
+                <p style="color:#f87171;"><em>Note: The role or company you entered wasn't matched exactly; results are based on the closest recognised values.</em></p>
+            {% endif %}
+            <p>{% set matched_count = company_required_skills|length - missing_skills|length %}
+            <strong>Skill Match Score:</strong> {{ skill_match_score }}% 
+            <em>({{ matched_count }}/{{ company_required_skills|length }} skills matched)</em></p>
+            <p><strong>Target:</strong> {{ student.career_interest }} @ {{ student.target_company }}</p>
+            {% if matched_company %}
+                <p><em>(interpreted company: {{ matched_company }})</em></p>
+            {% endif %}
+            {% if matched_role %}
+                <p><em>(interpreted role: {{ matched_role }})</em></p>
+            {% endif %}
+            <p><strong>Required Skills ({{ company_required_skills | length }}):</strong> {{ company_required_skills | join(', ') }}</p>
+            {% if missing_skills %}
+                <p><strong>Missing Skills:</strong> {{ missing_skills | join(', ') }}</p>
+            {% else %}
+                <p><strong>Missing Skills:</strong> None – great alignment!</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Personalized Recommendations</h2>
+        <ul>
+            {% for rec in recommendations %}
+                <li>{{ rec }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2>12-Week Improvement Roadmap</h2>
+        <ol>
+            {% for step in roadmap %}
+                <li>{{ step }}</li>
+            {% endfor %}
+        </ol>
+    </section>
+
+    <section class="card">
+        <h2>Generate Mock Interview</h2>
+        <p>Get AI-generated technical, coding, and HR questions tailored to your chosen role and company.</p>
+        <form action="{{ url_for('mock_interview') }}" method="post">
+            <input type="hidden" name="career_interest" value="{{ student.career_interest }}">
+            <input type="hidden" name="target_company" value="{{ student.target_company }}">
+            <input type="hidden" name="technologies" value="{{ (student.technologies | join(', ')) if student.technologies }}">
+            <input type="hidden" name="programming_languages" value="{{ (student.programming_languages | join(', ')) if student.programming_languages }}">
+            <button type="submit" class="btn-secondary">Start Mock Interview</button>
+        </form>
+    </section>
+
+    <div class="nav-links">
+        <a href="{{ url_for('index') }}" class="link">← Back to Input Form</a>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
