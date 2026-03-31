@@ -19,7 +19,7 @@ _openai_key = os.getenv("OPENAI_API_KEY", "").strip()
 OPENAI_API_KEY = _openai_key
 
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyAsNy1rPPfdTyZCLoPpzS59Z5_Jv-QwsiE").strip()
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", " your gemini_api_key").strip()
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
 
 # Debug: Print which provider and keys are loaded (obfuscate actual values)
