@@ -1,3 +1,8 @@
+# Demo:
+
+https://github.com/user-attachments/assets/2f970a85-7ad4-40f0-9f13-4df257a0d19f
+
+
 # 🎯 AI-Powered Student Career Readiness & Skill Gap Analysis System
 
 ## 📌 Project Overview
